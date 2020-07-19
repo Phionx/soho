@@ -1,11 +1,11 @@
 {{ define "main" -}}
   <div class="posts">
-    {{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.MainSections -}}
+    {{- $pages := where .Site.Pages "Params.type" "main" -}}
     {{- $paginator := .Paginate $pages -}}
 
     {{ range $paginator.Pages }}
-      <article class="post">
-        <h1 class="post-title">
+      <article class="page">
+        <h1 class="page-title">
           <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h1>
 
